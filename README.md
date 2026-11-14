@@ -16,7 +16,18 @@ KOTR00001 = Star Wars: Knights of the Old Republic
 
 Shell UI downloads this file when it fetches artwork and searches
 [SteamGridDB](https://www.steamgriddb.com) under the original game's name. Displayed names are not
-changed; renaming a game is done on the console.
+changed by this; the console offers them as suggestions.
+
+An optional suggested display name follows a `|`, for long official names:
+
+```
+KOTR00002 = Star Wars: Knights of the Old Republic II - The Sith Lords | Star Wars: KOTOR II
+PCSE00078 = Metal Gear Solid 2: Sons of Liberty | -
+```
+
+Without it the original game's name is suggested. `| -` suggests nothing (used for retail games,
+which already show their official name). Shell UI offers suggestions under START -> Options on a
+game, or *Apply suggested names to all ports*; names you set yourself are never replaced.
 
 ### Adding a game
 

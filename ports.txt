@@ -1,9 +1,12 @@
-# Shell UI ports list: <title id> = <original game>
+# Shell UI ports list: <title id> = <original game> [| <suggested name>]
 #
 # PS Vita homebrew ports and remakes often have short or made-up names ("KOTOR", "Ghostship").
 # Shell UI looks the title id up here and searches artwork (SteamGridDB) under the original
 # game's name. One entry per line; the name is what SteamGridDB calls the game.
 # Lines starting with '#' are comments.
+#
+# Optional ' | <suggested name>': a shorter name Shell UI offers when renaming (never applied
+# without asking). Without it the original game's name is suggested; ' | -' suggests nothing.
 
 # ---- Ports / remakes
 2SHIP2HAR = The Legend of Zelda: Majora's Mask
@@ -16,9 +19,9 @@ GHSTSHP01 = Super Mario 64
 GTACTW000 = Grand Theft Auto: Chinatown Wars
 GTASA0000 = Grand Theft Auto: San Andreas
 HCEV00001 = Halo: Combat Evolved
-JK2VITA01 = Star Wars Jedi Knight II: Jedi Outcast
-KOTR00001 = Star Wars: Knights of the Old Republic
-KOTR00002 = Star Wars: Knights of the Old Republic II - The Sith Lords
+JK2VITA01 = Star Wars Jedi Knight II: Jedi Outcast | Star Wars: Jedi Outcast
+KOTR00001 = Star Wars: Knights of the Old Republic | Star Wars: KOTOR
+KOTR00002 = Star Wars: Knights of the Old Republic II - The Sith Lords | Star Wars: KOTOR II
 MLVITA002 = Super Smash Bros. Melee
 NFSUG1VTA = Need for Speed: Underground
 OMWV00001 = The Elder Scrolls III: Morrowind
@@ -27,11 +30,11 @@ SPAGHETTI = Mario Kart 64
 STARSHIP1 = Star Fox 64
 ZELDASNES = The Legend of Zelda: A Link to the Past
 
-# ---- Retail games whose name differs on SteamGridDB
-PCSA00549 = LittleBigPlanet PS Vita
-PCSE00078 = Metal Gear Solid 2: Sons of Liberty
-PCSE00079 = Metal Gear Solid 3: Snake Eater
-PCSE00293 = Final Fantasy X/X-2 HD Remaster
-PCSE00397 = TxK
-PCSE00655 = Geometry Wars 3: Dimensions
-SCUS94451 = Syphon Filter 2
+# ---- Retail games whose name differs on SteamGridDB (search only: they already show their official name)
+PCSA00549 = LittleBigPlanet PS Vita | -
+PCSE00078 = Metal Gear Solid 2: Sons of Liberty | -
+PCSE00079 = Metal Gear Solid 3: Snake Eater | -
+PCSE00293 = Final Fantasy X/X-2 HD Remaster | -
+PCSE00397 = TxK | -
+PCSE00655 = Geometry Wars 3: Dimensions | -
+SCUS94451 = Syphon Filter 2 | -
