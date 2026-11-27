@@ -1,0 +1,2 @@
+# Title IDs that scripts/ports_sync.py should never propose (one per line, optional "# reason").
+# Use it for VitaDB ports that have no artwork-worthy original game, or that are matched wrongly.

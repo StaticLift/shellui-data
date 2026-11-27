@@ -1,0 +1,52 @@
+# Weekly: propose new ports.txt entries from VitaDB (scripts/ports_sync.py) as a pull request.
+# Needs the repository secret SGDB_KEY (a SteamGridDB API key) and "Allow GitHub Actions to create
+# and approve pull requests" (Settings -> Actions -> General).
+name: Ports sync from VitaDB
+
+on:
+  schedule:
+    - cron: "17 6 * * 1"   # Mondays 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency: ports-sync
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Find new ports
+        id: sync
+        env:
+          SGDB_KEY: ${{ secrets.SGDB_KEY }}
+        run: python3 scripts/ports_sync.py
+
+      - name: Open or update the pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ADDED: ${{ steps.sync.outputs.added }}
+          REVIEW: ${{ steps.sync.outputs.review }}
+        run: |
+          if [ -z "$(git status --porcelain ports.txt review.md)" ]; then echo "nothing new"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B ports-sync
+          git add ports.txt review.md
+          git commit -m "ports: $ADDED new from VitaDB, $REVIEW to review"
+          git push -f origin ports-sync
+          if [ -z "$(gh pr list --head ports-sync --state open --json number -q '.[].number')" ]; then
+            gh pr create --head ports-sync --base main --title "Ports from VitaDB" --body "$(cat <<EOF
+          Weekly sync from [VitaDB](https://www.rinnegatamante.eu/vitadb/).
+
+          - **$ADDED** ports added to \`ports.txt\`: VitaDB names the original game and SteamGridDB has a game of the same name.
+          - **$REVIEW** ports listed in \`review.md\` that could not be matched automatically.
+
+          Check the new lines in \`ports.txt\`, then merge. Entries can be fixed in this branch before merging.
+          EOF
+          )"
+          fi

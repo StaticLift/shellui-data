@@ -29,6 +29,14 @@ Without it the original game's name is suggested. `| -` suggests nothing (used f
 which already show their official name). Shell UI offers suggestions under START -> Options on a
 game, or *Apply suggested names to all ports*; names you set yourself are never replaced.
 
+### Automatic updates from VitaDB
+
+Every Monday a GitHub Action (`scripts/ports_sync.py`) reads the ports listed on
+[VitaDB](https://www.rinnegatamante.eu/vitadb/). When VitaDB's description names the original game and
+[SteamGridDB](https://www.steamgriddb.com) has a game of exactly that name, the port is added to
+`ports.txt`. Ports it cannot match go to `review.md`. The changes arrive as a pull request that a
+maintainer checks before merging. Title IDs in `ignore.txt` are never proposed.
+
 ### Adding a game
 
 Open a pull request or an issue with the title ID (shown in VitaShell, or in the app's
