@@ -24,6 +24,7 @@ KOTR00001 = Star Wars: Knights of the Old Republic | Star Wars: KOTOR
 KOTR00002 = Star Wars: Knights of the Old Republic II - The Sith Lords | Star Wars: KOTOR II
 MLVITA002 = Super Smash Bros. Melee
 NFSUG1VTA = Need for Speed: Underground
+NFSU2VITA = Need for Speed: Underground 2
 OMWV00001 = The Elder Scrolls III: Morrowind
 SHIPOFHAR = The Legend of Zelda: Ocarina of Time
 SPAGHETTI = Mario Kart 64
