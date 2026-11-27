@@ -48,5 +48,5 @@ jobs:
 
           Check the new lines in \`ports.txt\`, then merge. Entries can be fixed in this branch before merging.
           EOF
-          )"
+          )" || echo "::warning::Could not open the pull request (the organization does not allow Actions to). Open it here: https://github.com/${{ github.repository }}/compare/main...ports-sync"
           fi
