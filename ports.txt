@@ -1,0 +1,37 @@
+# Shell UI ports list: <title id> = <original game>
+#
+# PS Vita homebrew ports and remakes often have short or made-up names ("KOTOR", "Ghostship").
+# Shell UI looks the title id up here and searches artwork (SteamGridDB) under the original
+# game's name. One entry per line; the name is what SteamGridDB calls the game.
+# Lines starting with '#' are comments.
+
+# ---- Ports / remakes
+2SHIP2HAR = The Legend of Zelda: Majora's Mask
+APTR10007 = Portal
+BANJO0064 = Banjo-Kazooie
+DUSKGXM01 = The Legend of Zelda: Twilight Princess
+GBLN00001 = Diddy Kong Racing
+GEVT00001 = GoldenEye 007
+GHSTSHP01 = Super Mario 64
+GTACTW000 = Grand Theft Auto: Chinatown Wars
+GTASA0000 = Grand Theft Auto: San Andreas
+HCEV00001 = Halo: Combat Evolved
+JK2VITA01 = Star Wars Jedi Knight II: Jedi Outcast
+KOTR00001 = Star Wars: Knights of the Old Republic
+KOTR00002 = Star Wars: Knights of the Old Republic II - The Sith Lords
+MLVITA002 = Super Smash Bros. Melee
+NFSUG1VTA = Need for Speed: Underground
+OMWV00001 = The Elder Scrolls III: Morrowind
+SHIPOFHAR = The Legend of Zelda: Ocarina of Time
+SPAGHETTI = Mario Kart 64
+STARSHIP1 = Star Fox 64
+ZELDASNES = The Legend of Zelda: A Link to the Past
+
+# ---- Retail games whose name differs on SteamGridDB
+PCSA00549 = LittleBigPlanet PS Vita
+PCSE00078 = Metal Gear Solid 2: Sons of Liberty
+PCSE00079 = Metal Gear Solid 3: Snake Eater
+PCSE00293 = Final Fantasy X/X-2 HD Remaster
+PCSE00397 = TxK
+PCSE00655 = Geometry Wars 3: Dimensions
+SCUS94451 = Syphon Filter 2
